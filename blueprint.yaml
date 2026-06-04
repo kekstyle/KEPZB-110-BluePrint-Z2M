@@ -208,6 +208,12 @@ action:
             data:
               topic: !input 'z2m_keypad_path_set'
               payload: '{"arm_mode": {"mode": "arm_all_zones"}}'
+          - service: "{{ notify_service_var }}"
+            data:
+              title: "\U0001F513 Alarme activée en mode absence"
+              message:
+                "Alarme activée en mode absence à
+                {{ now().strftime('%H:%M') }} le {{ now().strftime('%d/%m/%Y') }}."              
           - choose:
             default: !input 'action_armed_away'
 
@@ -219,6 +225,12 @@ action:
             data:
               topic: !input 'z2m_keypad_path_set'
               payload: '{"arm_mode": {"mode": "arm_day_zones"}}'
+          - service: "{{ notify_service_var }}"
+            data:
+              title: "\U0001F513 Alarme activée en mode présence"
+              message:
+                "Alarme activée en mode présence à
+                {{ now().strftime('%H:%M') }} le {{ now().strftime('%d/%m/%Y') }}."  
           - choose:
             default: !input 'action_armed_home'
 
@@ -230,6 +242,12 @@ action:
             data:
               topic: !input 'z2m_keypad_path_set'
               payload: '{"arm_mode": {"mode": "arm_night_zones"}}'
+          - service: "{{ notify_service_var }}"
+            data:
+              title: "\U0001F513 Alarme activée en mode nuit"
+              message:
+                "Alarme activée en mode nuit à
+                {{ now().strftime('%H:%M') }} le {{ now().strftime('%d/%m/%Y') }}."              
           - choose:
             default: !input 'action_armed_night'
 
