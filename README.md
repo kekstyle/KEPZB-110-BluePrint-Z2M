@@ -19,7 +19,7 @@ A comprehensive Home Assistant blueprint that provides full synchronization betw
 
 ### Security Features
 - **PIN validation** for disarming (alarmo user/PIN)
-- **notify service** - Notify who's disarm, fail atempts, alarm triggering
+- **notify service** - Notify who's disarm, fail atempts, alarm triggering, arming modes (away/home/night)
 - **tamper action** with configurable action
 - **Pin error attempt** with configurable action and number of fail before action (/!\ read ' ADD CODE TO CONFIGTURATION.YAML IN CONFIGURATION SECTION ! )
 - **Invalid code handling** with keypad feedback and notify on phone
